@@ -1,2 +1,3 @@
 <h1><%= current_user.name %></h1>
 <p>Find me in app/views/profile/show.html.erb</p>
+<%= image_tag current_user.avatar.variant(resize: "150x200") %>

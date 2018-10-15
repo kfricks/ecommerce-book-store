@@ -2,6 +2,6 @@
 
 <%= form_for current_user, url: profile_path do |form| %>
   Name: <%= form.text_field :name %>
-
+  <div>Profile Photo: <%= form.file_field :avatar %></div>
   <div><%= form.submit %></div>
 <% end %>
