@@ -1,0 +1,7 @@
+<h1>Edit Book Details</h1>
+
+<%= form_for current_user, url: books_path do |form| %>
+  Name: <%= form.text_field :name %>
+  <div>Book Cover Image: <%= form.file_field :avatar %></div>
+  <div><%= form.submit %></div>
+<% end %>
