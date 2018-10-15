@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   put     "profile",      to: "profile#update"
   patch   "profile",      to: "profile#update"
   get     "profile/edit", to: "profile#edit"
+
+  get     "styleguide",   to: "style_guide#styleguide"
 end
