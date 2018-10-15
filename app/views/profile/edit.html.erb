@@ -1,2 +1,7 @@
 <h1>Profile#edit</h1>
 <p>Find me in app/views/profile/edit.html.erb</p>
+
+<%= form_for current_user, url: profile_path do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit %>
+<% end %>
