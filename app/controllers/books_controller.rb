@@ -8,15 +8,24 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  def edit
+  def create
+    @book = Book.create(book_params)
+  end
 
+  def new
+    @book = Book.new
+  end
+
+  def edit
+    @book = Book.find(params[:id])
   end
 
   def update
     book.update_attributes(book_params)
 
     if book.save
-      redirect_to book_path
+      flash.now[:success] = "Book has been saved."
+      redirect_to books_path
     else
       render :edit
     end
@@ -29,6 +38,6 @@ class BooksController < ApplicationController
 private
 
   def book_params
-    params.require(:book).permit(:title, :avatar)
+    params.require(:book).permit(:title, :avatar, :price)
   end
 end
