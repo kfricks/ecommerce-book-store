@@ -1,8 +1,9 @@
 <h1>All Books</h1>
 
 <% @books.each do |book| %>
-<%= image_tag book.avatar %>
-<%# image_tag book.avatar.variant(resize: "150x200") %>
+<div class="book--thumbnail"><%= image_tag book.avatar %></div>
+<%# image_tag book.avatar.variant(resize: "100x100") %>
+<%# image_tag(url_for(book.avatar.variant(monochrome: true))) %>
    <h2><%= book.title %></h2>
    <p>By SOMEONE<%# book.author %>
    <div><%= book.price %></p></div>

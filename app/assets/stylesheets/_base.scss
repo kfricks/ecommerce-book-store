@@ -15,7 +15,7 @@ body {
 img {
   box-sizing: border-box;
   display: inline-block;
-/*  width: 100%;*/
+  width: 100%;
 }
 
 ::selection {
@@ -65,4 +65,11 @@ a:active {
   color: $c-primary-xlight;
   font-size: 90%;
   vertical-align: baseline;
+}
+
+.book--thumbnail {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
 }
