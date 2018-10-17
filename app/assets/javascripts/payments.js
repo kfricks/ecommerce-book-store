@@ -54,7 +54,9 @@ window.onload = function() {
           errorElement.textContent = result.error.message;
         } else {
           // Send the token to your server.
-          stripeTokenHandler(result.token);
+          var tokenFormField = document.getElementById('purchase_stripe_token');
+          tokenFormField.value = result.token.id;
+          form.submit();
         }
       });
     });
