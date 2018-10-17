@@ -1,14 +1,12 @@
+require "stripe"
+
 class PurchasesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_book, except: [:index]
 
   def index
-    @sales = Sale.where(user: current_user)
+    @sales = Purchase.where(user: current_user)
     @sales = current_user.sales
-  end
-
-  def show
-    # ...
   end
 
   def new
@@ -16,16 +14,12 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @purchase = Purchase.new(book: @book, user: current_user)
+    stripe_token = purchase_params[:stripe_token]
+    stripe_charge = StripeServices::CreateCharge.call(@book, current_user, stripe_token)
+    Purchase.create(book: @book, user: current_user, stripe_charge_id: stripe_charge.id)
+    redirect_to purchases_path
   end
 
-  def edit
-    # ...
-  end
-
-  def update
-    # ...
-  end
 
 
 private
@@ -34,4 +28,7 @@ private
     @book = Book.find(params[:book_id])
   end
 
+  def purchase_params
+    params.require(:purchase).permit(:stripe_token)
+  end
 end

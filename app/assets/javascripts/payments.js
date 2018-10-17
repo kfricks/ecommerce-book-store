@@ -1,5 +1,5 @@
 window.onload = function() {
-  var cardEL = document.getElementById('card-element');
+  var cardEl = document.getElementById('card-element');
   if (cardEl) {
     // Create a Stripe client.
     var stripe = Stripe('pk_test_Z4Jmlu4CV2UTGqQlVYXVLIfb');
