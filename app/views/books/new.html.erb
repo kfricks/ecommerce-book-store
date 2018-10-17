@@ -2,6 +2,6 @@
 <%= form_for @book, url: books_path do |form| %>
   Title: <%= form.text_field :title %>
   <div>Price: <%= form.text_field :price %></div>
-  <div>Book Cover Image: <%= form.file_field :avatar %></div>
+  <div>Book Cover Image: <%= form.file_field :avatar, direct_upload: true %></div>
   <div><%= form.submit %></div>
 <% end %>

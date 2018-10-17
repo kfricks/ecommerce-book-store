@@ -1,6 +1,7 @@
 <h1>Edit Book Details</h1>
 
-<%= form_for current_user, url: books_path do |form| %>
+<%# form_for current_user, url: books_path do |form| %>
+<%= form_for (@book) do |form| %>
   Title: <%= form.text_field :title %>
   Price: <%= form.text_field :price %>
   <div>Book Cover Image: <%= form.file_field :avatar %></div>

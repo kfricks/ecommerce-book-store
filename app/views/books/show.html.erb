@@ -2,7 +2,6 @@
 
 <%= @book.title %>
 $<%= @book.price %>
-
-
-
+<div class="book--thumbnail"><%= image_tag @book.avatar if @book.avatar.attached? %></div>
+<%= link_to "Edit Book", edit_book_path(@book), class: "c-button c-button--small c-button--focal"%>
 <%# %>

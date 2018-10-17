@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
   def index
     @books = Book.all
-
   end
 
   def show
@@ -10,6 +9,9 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_params)
+    session[:book_id] = book.id
+    book.avatar.attach(params[:avatar])
+    redirect_to root_path
   end
 
   def new
@@ -21,9 +23,11 @@ class BooksController < ApplicationController
   end
 
   def update
-    book.update_attributes(book_params)
+   # @book = book.update_attributes(book_params)
+    @book = Book.find(params[:id])
+    @book.update(book_params)
 
-    if book.save
+    if @book.save
       flash.now[:success] = "Book has been saved."
       redirect_to books_path
     else
