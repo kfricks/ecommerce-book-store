@@ -20,8 +20,6 @@ class PurchasesController < ApplicationController
     redirect_to purchases_path
   end
 
-
-
 private
 
   def load_book
