@@ -1,4 +1,4 @@
-class PurchaseController < ApplicationController
+class PurchasesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_book, except: [:index]
 
@@ -16,7 +16,7 @@ class PurchaseController < ApplicationController
   end
 
   def create
-    @purchase = Purchasce.new(book: @book, user: current_user)
+    @purchase = Purchase.new(book: @book, user: current_user)
   end
 
   def edit
@@ -32,5 +32,6 @@ private
 
   def load_book
     @book = Book.find(params[:book_id])
+  end
 
 end
