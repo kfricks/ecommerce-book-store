@@ -4,7 +4,7 @@ class StripeServices::CreateCharge
       amount: book.stripe_amount,
       currency: "usd",
       source: stripe_token, #obtained with Stripe.js
-      description: "#{user.email} purchased #{@book.title}"
+      description: "#{user.email} purchased #{book.title}"
       )
   end
 end
