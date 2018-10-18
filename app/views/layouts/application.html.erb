@@ -25,8 +25,11 @@
             <h2 class="c-title">BOOK STORE</h2>
           </li>
           <li class="c-navigation__item <%= active_class('/') %>">
-            <%= link_to_unless_current("Shop Books", root_path, :class=>"c-navigation__link") %>
+            <%= link_to("Shop Books", root_path, :class=>"c-navigation__link") %>
           </li>
+<!--           <li class="c-navigation__item <%= active_class('/') %>">
+            <%# link_to("Shop Books", root_path, :class=>"c-navigation__link #{active_class(root_path)}") %>
+          </li> -->
           <li class="c-navigation__item">
             <%= link_to("My Purchases", purchases_path, :class=>"c-navigation__link") %>
           </li>
