@@ -9,7 +9,6 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_params)
-    # session[:book_id] = book.id
     # book.avatar.attach(params[:avatar])
 
     if @book.save
