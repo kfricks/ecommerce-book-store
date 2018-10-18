@@ -9,6 +9,6 @@ class PurchaseMailer < ApplicationMailer
     @greeting = "Hi"
     @user = params[:user]
 
-    mail to: @user.email
+    mail to: @user.email, subject: "Thanks!"
   end
 end
