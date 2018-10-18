@@ -4,21 +4,43 @@
     <title>EcommerceBookStore</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://js.stripe.com/v3/"></script>
   </head>
   <body>
     <header>
-      <div>
-        Blue Review
+ <!--      <div class="nav--section">
+        Book Store
       </div>
-      <nav>
+      <nav class="u--float-right nav--section">
         <a href="#">Topics</a>
         <a href="#">Tags</a>
-        <%= link_to("Sign Up", new_user_registration_path) %>
-        <%= link_to("Sign Out", destroy_user_session_path, :method => 'delete') %>
-      </nav>
+        <%# link_to("Sign Up", new_user_registration_path) %>
+        <%# link_to("Sign Out", destroy_user_session_path, :method => 'delete') %>
+      </nav> -->
+      <div class="c-section">
+        <ul class="c-navigation">
+          <li class="c-navigation__item">
+            <a class="c-navigation__link c-navigation__link--active" href="#">Navigation Link</a>
+          </li>
+          <li class="c-navigation__item">
+            <a class="c-navigation__link" href="#">Navigation Link</a>
+          </li>
+          <li class="c-navigation__item">
+            <a class="c-navigation__link" href="#">Navigation Link</a>
+          </li>
+          <li class="c-navigation__item c-navigation__item--push-right">
+            <a class="c-navigation__link" href="#">Navigation Link Pushed Right</a>
+          </li>
+          <li class="c-navigation__item">
+            <%= link_to("Sign Up", new_user_registration_path, :class=>"c-navigation__link") %>
+          </li>
+          <li class="c-navigation__item">
+            <a class="c-button c-button--small" href="#">Navigation Component Can Also Hold Buttons</a>
+          </li>
+        </ul>
+      </div>
     </header>
     <%= yield %>
 
