@@ -10,7 +10,7 @@
 ActiveRecord::Base.transaction do
   User.create!(name: "Katie", email: "user@user.com", password:"tester")
 
-  kurt_v = User.create!(name: "Ron Rash", email: "author@author.com", password:"tester")
+  kurt_v = User.create!(name: "Kurt Vonny", email: "author@author.com", password:"tester")
 
   books = [
     { title: "Book1", price: 15.99 },
