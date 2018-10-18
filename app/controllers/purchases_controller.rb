@@ -17,6 +17,7 @@ class PurchasesController < ApplicationController
     stripe_token = purchases_params[:stripe_token]
     stripe_charge = StripeServices::CreateCharge.call(@book, current_user, stripe_token)
     Purchase.create(book: @book, user: current_user, stripe_charge_id: stripe_charge.id)
+    PurchaseMailer.with(user: User.first).thank_you.deliver_later
     redirect_to purchases_path
   end
 
