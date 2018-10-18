@@ -30,17 +30,15 @@
           <li class="c-navigation__item">
             <%= link_to("My Purchases", purchases_path, :class=>"c-navigation__link") %>
           </li>
+
           <li class="c-navigation__item c-navigation__item--push-right">
-            <a class="c-navigation__link" href="#">Navigation Link Pushed Right</a>
-          </li>
-          <li class="c-navigation__item">
-            <%= link_to("Sign Up", new_user_registration_path, :class=>"c-navigation__link") %>
+            <%= link_to("Sign In", new_user_session_path, :class=>"c-navigation__link") %>
           </li>
           <li class="c-navigation__item">
             <%= link_to("Sign Out", destroy_user_session_path, :method => 'delete', :class=>"c-navigation__link") %>
           </li>
           <li class="c-navigation__item">
-            <a class="c-button c-button--small" href="#">Navigation Component Can Also Hold Buttons</a>
+             <%= link_to("Sign Up", new_user_registration_path, class:"c-button c-button--small") %>
           </li>
         </ul>
       </div>
