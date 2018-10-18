@@ -25,16 +25,19 @@
             <a class="c-navigation__link c-navigation__link--active" href="#">Navigation Link</a>
           </li>
           <li class="c-navigation__item">
-            <a class="c-navigation__link" href="#">Navigation Link</a>
+            <%= link_to("Shop Books", root_path, :class=>"c-navigation__link") %>
           </li>
           <li class="c-navigation__item">
-            <a class="c-navigation__link" href="#">Navigation Link</a>
+            <%= link_to("My Purchases", purchases_path, :class=>"c-navigation__link") %>
           </li>
           <li class="c-navigation__item c-navigation__item--push-right">
             <a class="c-navigation__link" href="#">Navigation Link Pushed Right</a>
           </li>
           <li class="c-navigation__item">
             <%= link_to("Sign Up", new_user_registration_path, :class=>"c-navigation__link") %>
+          </li>
+          <li class="c-navigation__item">
+            <%= link_to("Sign Out", destroy_user_session_path, :method => 'delete', :class=>"c-navigation__link") %>
           </li>
           <li class="c-navigation__item">
             <a class="c-button c-button--small" href="#">Navigation Component Can Also Hold Buttons</a>
