@@ -9,9 +9,14 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_params)
-    session[:book_id] = book.id
-    book.avatar.attach(params[:avatar])
-    redirect_to root_path
+    # session[:book_id] = book.id
+    # book.avatar.attach(params[:avatar])
+
+    if @book.save
+      redirect_to root_path
+    else
+      render :create
+    end
   end
 
   def new
