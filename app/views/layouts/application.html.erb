@@ -22,10 +22,10 @@
       <div class="c-section">
         <ul class="c-navigation">
           <li class="c-navigation__item">
-            <a class="c-navigation__link c-navigation__link--active" href="#">Navigation Link</a>
+            <h2 class="c-title">BOOK STORE</h2>
           </li>
-          <li class="c-navigation__item">
-            <%= link_to("Shop Books", root_path, :class=>"c-navigation__link") %>
+          <li class="c-navigation__item <%= active_class('/') %>">
+            <%= link_to_unless_current("Shop Books", root_path, :class=>"c-navigation__link") %>
           </li>
           <li class="c-navigation__item">
             <%= link_to("My Purchases", purchases_path, :class=>"c-navigation__link") %>
