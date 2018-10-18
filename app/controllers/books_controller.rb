@@ -29,7 +29,7 @@ class BooksController < ApplicationController
 
     if @book.save
       flash.now[:success] = "Book has been saved."
-      redirect_to books_path
+      redirect_to book_path
     else
       render :edit
     end

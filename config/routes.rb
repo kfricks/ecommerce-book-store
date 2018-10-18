@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get     "profile/edit", to: "profile#edit"
 
   get     "styleguide",   to: "style_guide#styleguide"
-  resources :books, only: :show do
+
+ # resources :books, only: :show do
+ # resources :books do
+  resources :books, only: [:show, :edit, :update] do
     resources :purchases, only: [:new, :create]
     end
 
