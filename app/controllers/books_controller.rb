@@ -9,7 +9,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_params)
-    # book.avatar.attach(params[:avatar])
+    # book.book_cover.attach(params[:book_cover])
 
     if @book.save
       redirect_to root_path
@@ -46,6 +46,6 @@ class BooksController < ApplicationController
 private
 
   def book_params
-    params.require(:book).permit(:title, :avatar, :price)
+    params.require(:book).permit(:title, :book_cover, :price)
   end
 end

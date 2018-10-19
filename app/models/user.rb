@@ -6,8 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  has_many :book_releases, foreign_key: :author_id
-  has_many :books, through: :book_releases
+  has_many :books
 
   has_many :purchases
   has_many :purchased_books, through: :purchases, class_name: "Book", foreign_key: :book_id

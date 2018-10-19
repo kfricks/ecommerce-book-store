@@ -7,10 +7,10 @@
       <div class="c-section">
         <h4 class="c-title"><%= book.title %></h4>
         <h4 class="c-title c-title--tiny"><%# book.authors.pluck(:name).join(", ") %></h4>
-        <div class="book--thumbnail"><%= image_tag book.avatar %></div>
-        <%# image_tag book.avatar.variant(resize: "100x100") %>
-        <%# image_tag(url_for(book.avatar.variant(monochrome: true))) %>
-           <h4 class="c-title c-title--tiny">By <%= book.authors.pluck(:name).join(", ") %></h4>
+        <!-- <div class="book--thumbnail"><%# image_tag book.book_cover %></div> -->
+        <%= image_tag book.book_cover.variant(resize: "100x100") %>
+        <%# image_tag(url_for(book.book_cover.variant(monochrome: true))) %>
+           <!-- <h4 class="c-title c-title--tiny">By <%# book.authors.pluck(:name).join(", ") %></h4> -->
            <h4>$<%= book.price %></h4>
 
         <%= link_to "Learn More", book_path(book), class: "c-button c-button--small c-button--focal"%>

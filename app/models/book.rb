@@ -1,9 +1,8 @@
 class Book < ApplicationRecord
 
-  has_many :book_releases
-  has_many :authors, through: :book_releases
+  belongs_to :author, class_name: "User"
 
-  has_one_attached :avatar
+  has_one_attached :book_cover
 
   has_many :purchases
   has_many :users, through: :purchases

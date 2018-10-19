@@ -1,8 +1,8 @@
-<%# image_tag current_user.avatar.variant(resize: "200x100") %>
+<%# image_tag current_user.book_cover.variant(resize: "200x100") %>
 
 <%= @book.title %>
 $<%= @book.price %>
-<div class="book--thumbnail"><%= image_tag @book.avatar if @book.avatar.attached? %></div>
+<div class="book--thumbnail"><%= image_tag @book.book_cover if @book.book_cover.attached? %></div>
 <%= link_to "Edit Book", edit_book_path(@book), class: "c-button c-button--small c-button--focal"%>
 <%# %>
 

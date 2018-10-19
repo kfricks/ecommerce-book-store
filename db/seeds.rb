@@ -17,7 +17,8 @@ ActiveRecord::Base.transaction do
     { title: "Book2", price: 24.99, author: kurt_v, image: "/images/Enchantment-Book-Cover-Best-Seller1.jpg"}
     ]
   books.each do |book|
-      Book.create!(title: book[:title], price: book[:price], author: book[:author], avatar: book[:image])
+      # Book.create!(title: book[:title], price: book[:price], author: book[:author], book_cover: book[:image])
+        Book.create!(title: book[:title], price: book[:price], book_cover: book[:image])
   end
 
   kurt_v.books << Book.all

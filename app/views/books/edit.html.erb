@@ -4,6 +4,6 @@
 <%= form_for (@book) do |form| %>
   Title: <%= form.text_field :title %>
   Price: <%= form.text_field :price %>
-  <div>Book Cover Image: <%= form.file_field :avatar %></div>
+  <div>Book Cover Image: <%= form.file_field :book_cover %></div>
   <div><%= form.submit %></div>
 <% end %>
