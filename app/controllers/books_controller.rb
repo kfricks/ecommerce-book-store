@@ -8,13 +8,13 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.create(book_params)
+    @book = Book.new(book_params)
     # book.book_cover.attach(params[:book_cover])
 
-    if @book.save
+    if @book.save!
       redirect_to root_path
     else
-      render :create
+      render :new
     end
   end
 

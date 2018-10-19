@@ -2,11 +2,15 @@
   <h1 class="c-title c-title--large">Browse All Books</h1>
 </div>
 <div class="c-section">
+  hey
   <% @books.each do |book| %>
+  uhhh
   <div class="c-card u-margin-bottom-small">
       <div class="c-section">
         <h4 class="c-title"><%= book.title %></h4>
-        <h4 class="c-title c-title--tiny"><%# book.authors.pluck(:name).join(", ") %></h4>
+        <h4 class="c-title c-title--tiny">
+          <%# book.authors.pluck(:name).join(", ") %>
+        </h4>
         <!-- <div class="book--thumbnail"><%# image_tag book.book_cover %></div> -->
         <%= image_tag book.book_cover.variant(resize: "100x100") %>
         <%# image_tag(url_for(book.book_cover.variant(monochrome: true))) %>
@@ -18,7 +22,5 @@
       </div>
   <% end %>
 </div>
-
-
 
  <%# %>

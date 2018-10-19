@@ -2,7 +2,7 @@
 <%# form_for @book, url: books_path do |form| %>
 <%= form_for @book do |form| %>
   <div>Title: <%= form.text_field :title %></div>
-  <div>Author: <%# form.text_field :author_id %></div>
+  <div>Author: <%= form.text_field :current_user %></div>
   <div>Price: <%= form.text_field :price %></div>
   <div>Book Cover Image: <%= form.file_field :book_cover, direct_upload: true %></div>
   <div><%= form.submit %></div>
