@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :update, :edit, :new, :destroy]
   def index
     @books = Book.all
   end
@@ -10,7 +11,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     # book.book_cover.attach(params[:book_cover])
-
+    @book.author = current_user
     if @book.save!
       redirect_to root_path
     else
