@@ -12,7 +12,7 @@
           </div>
           <div class="book-details">
           <h4 class="c-title"><%= book.title %></h4>
-          <h4 class="c-title c-title--tiny"> Author:
+          <h4 class="c-title c-title--tiny"> By: <%= book.author.name %>
             <%# book.authors.pluck(:name).join(", ") %>
           </h4>
              <h4>$<%= book.price %></h4>

@@ -1,10 +1,18 @@
 <%# image_tag current_user.book_cover.variant(resize: "200x100") %>
 
-<%= @book.title %>
-$<%= @book.price %>
-<div class="book--thumbnail"><%= image_tag @book.book_cover if @book.book_cover.attached? %></div>
-<%= link_to "Edit Book", edit_book_path(@book), class: "c-button c-button--small c-button--focal"%>
-<%# %>
-
-
-<%# link_to "Learn More", book_path(book), class: "c-button c-button--small c-button--focal"%>
+<div class="c-section">
+  <div class="book_cover">
+    <%= image_tag @book.book_cover if @book.book_cover.attached? %>
+  </div>
+  <div class="book-details">
+    <h4 class="c-title"><%= @book.title %></h4>
+    <h4 class="c-title c-title--tiny">
+      By: <%= @book.author.name %>
+    </h4>
+    <h4>$<%= @book.price %></h4>
+    <%= link_to "Buy Book", new_book_purchase_path(@book), class: "c-button c-button--small c-button--focal"%>
+    <div>
+      <%= link_to "Edit Book", edit_book_path(@book) %>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#puts everything in transaction container so i don't have to recreate users each time
+# first line puts everything in transaction container so i don't have to recreate users each time
 ActiveRecord::Base.transaction do
   User.create!(name: "Katie", email: "katief@katie.com", password:"tester")
 
