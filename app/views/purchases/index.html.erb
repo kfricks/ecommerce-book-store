@@ -1,18 +1,25 @@
 <div class="c-section">
   <h1 class="c-title">My Purchases</h1>
-  <div class="c-card u-margin-bottom-small">
-    <div class="c-section">
-      <% @sales.each do |sale| %>
-      <div class="book_cover">
-        <% if sale.book.book_cover.attached? %>
-          <%= image_tag sale.book.book_cover.variant(resize: "75x75") %>
+    <% if @sales.any? %>
+      <div class="c-card u-margin-bottom-small">
+        <div class="c-section">
+        <% @sales.each do |sale| %>
+        <div class="book_cover">
+          <% if sale.book.book_cover.attached? %>
+            <%= image_tag sale.book.book_cover.variant(resize: "75x75") %>
+          <% end %>
+        </div>
+        <div class="book-details">
+          <h4 class="c-title c-title--small"><%= sale.book.title %></h4>
+          <h4 class="c-title c-title--tiny">By: <%= sale.book.author.name %></h4>
+        </div>
         <% end %>
+        <% else %>
+        You haven't purchased any books.
+        <div>
+          <%= link_to "Find my perfect book", books_path, class: "c-button c-button--small c-button--focal"%>
+        </div>
       </div>
-      <div class="book-details">
-        <h4 class="c-title c-title--small"><%= sale.book.title %></h4>
-        <h4 class="c-title c-title--tiny">By: <%= sale.book.author.name %></h4>
-      </div>
-      <% end %>
     </div>
-  </div>
+  <% end %>
 </div>
