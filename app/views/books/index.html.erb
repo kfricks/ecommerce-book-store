@@ -3,23 +3,24 @@
 </div>
 <div class="c-section">
   <% @books.each do |book| %>
-  <div class="c-card u-margin-bottom-small">
-      <div class="c-section">
-        <h4 class="c-title"><%= book.title %></h4>
-        <h4 class="c-title c-title--tiny">
-          <%# book.authors.pluck(:name).join(", ") %>
-        </h4>
-        <!-- <div class="book--thumbnail"><%# image_tag book.book_cover %></div> -->
-        <% if book.book_cover.attached? %>
-          <%= image_tag book.book_cover.variant(resize: "100x100") %>
-        <% end %>
-        <%# image_tag(url_for(book.book_cover.variant(monochrome: true))) %>
-           <!-- <h4 class="c-title c-title--tiny">By <%# book.authors.pluck(:name).join(", ") %></h4> -->
-           <h4>$<%= book.price %></h4>
+    <div class="c-card u-margin-bottom-small">
+        <div class="c-section">
+          <div class="book_cover">
+            <% if book.book_cover.attached? %>
+              <%= image_tag book.book_cover.variant(resize: "150x150") %>
+            <% end %>
+          </div>
+          <div class="book-details">
+          <h4 class="c-title"><%= book.title %></h4>
+          <h4 class="c-title c-title--tiny"> Author:
+            <%# book.authors.pluck(:name).join(", ") %>
+          </h4>
+             <h4>$<%= book.price %></h4>
 
-        <%= link_to "Learn More", book_path(book), class: "c-button c-button--small c-button--focal"%>
+          <%= link_to "Learn More", book_path(book), class: "c-button c-button--small c-button--focal"%>
+          </div>
         </div>
-      </div>
+    </div>
   <% end %>
 </div>
 

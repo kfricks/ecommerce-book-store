@@ -67,10 +67,13 @@ a:active {
   vertical-align: baseline;
 }
 
-.book--thumbnail {
-  display: inline-block;
-  width: 100px;
-  overflow: hidden;
+.book_cover {
+  float: left;
+}
+
+.book-details {
+  float: left;
+  margin-left: 20px;
 }
 
 .u--float-right {
