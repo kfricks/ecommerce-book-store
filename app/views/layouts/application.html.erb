@@ -37,7 +37,7 @@
             <%= link_to("My Purchases", purchases_path, class: "c-navigation__link #{active_class(purchases_path)}") %>
           </li>
           <li class="c-navigation__item">
-            <%= link_to("Add Book to Shop", new_book_path, class: "c-navigation__link #{active_class(new_book_path)}") %>
+            <%= link_to("Add Book", new_book_path, class: "c-navigation__link #{active_class(new_book_path)}") %>
           </li>
           <% if current_user %>
             <li class="c-navigation__item c-navigation__item--push-right">
