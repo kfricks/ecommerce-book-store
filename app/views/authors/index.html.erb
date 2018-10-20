@@ -1,4 +1,14 @@
-authors, index
-<% @authors.each do |author| %>
-  <%= author.name %>
-<% end %>
+<div class="c-section">
+  <h1 class="c-title">Authors</h1>
+  <% @authors.each do |author| %>
+    <div class="c-card u-margin-bottom-small">
+      <div class="c-section">
+      <div class="book_cover">
+          <img src="http://0.0.0.0:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7dc6195bacedb415c2a938faa3fc4df7afc74e78/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lLTnpWNE56VUdPZ1pGVkE9PSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--bb00377ae2ff0ec904398198c44aeb7d5c29b8a9/red.png">
+      </div>
+      <div class="book-details">
+        <h4 class="c-title c-title--small"><%= author.name %></h4>
+        <h4 class="c-title c-title--tiny">Author bio</h4>
+      </div>
+  <% end %>
+</div>
