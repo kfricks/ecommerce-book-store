@@ -28,7 +28,10 @@
             <h2 class="c-title">BOOK STORE</h2>
           </li>
           <li class="c-navigation__item">
-            <%= link_to("Shop Books", root_path, class: "c-navigation__link #{active_class(root_path)}") %>
+            <%= link_to("Books", root_path, class: "c-navigation__link #{active_class(root_path)}") %>
+          </li>
+          <li class="c-navigation__item">
+            <%= link_to("Authors", authors_path, class: "c-navigation__link #{active_class(authors_path)}") %>
           </li>
           <li class="c-navigation__item">
             <%= link_to("My Purchases", purchases_path, class: "c-navigation__link #{active_class(purchases_path)}") %>
