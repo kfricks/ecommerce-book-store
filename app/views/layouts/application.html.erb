@@ -20,31 +20,40 @@
         <%# link_to("Sign Out", destroy_user_session_path, :method => 'delete') %>
       </nav> -->
       <div class="c-section">
+<!--         this is me attempting to put sign in info on a different line
+        <div>
+          <ul class="c-navigation u--float-right">
+            <li class="c-navigation__item">
+              yo
+            </li>
+            <li class="c-navigation__item">
+              yo
+            </li>
+          </ul>
+        </div> -->
+        <!-- <a class="c-link" href="#">Standalone Links</a> -->
         <ul class="c-navigation">
           <li class="c-navigation__item">
             <h2 class="c-title">BOOK STORE</h2>
           </li>
-          <li class="c-navigation__item <%= active_class('/') %>">
-            <%= link_to("Shop Books", root_path, :class=>"c-navigation__link") %>
-          </li>
-<!--           <li class="c-navigation__item <%= active_class('/') %>">
-            <%# link_to("Shop Books", root_path, :class=>"c-navigation__link #{active_class(root_path)}") %>
-          </li> -->
           <li class="c-navigation__item">
-            <%= link_to("My Purchases", purchases_path, :class=>"c-navigation__link") %>
+            <%= link_to("Shop Books", root_path, class: "c-navigation__link #{active_class(root_path)}") %>
           </li>
           <li class="c-navigation__item">
-            <%= link_to("Add Book to Shop", new_book_path, :class=>"c-navigation__link") %>
+            <%= link_to("My Purchases", purchases_path, class: "c-navigation__link #{active_class(purchases_path)}") %>
+          </li>
+          <li class="c-navigation__item">
+            <%= link_to("Add Book to Shop", new_book_path, class: "c-navigation__link #{active_class(new_book_path)}") %>
           </li>
 
           <li class="c-navigation__item c-navigation__item--push-right">
-            <%= link_to("Sign In", new_user_session_path, :class=>"c-navigation__link") %>
+            <%= link_to("Sign In", new_user_session_path, class: "c-navigation__link #{active_class(new_user_session_path)}") %>
           </li>
           <li class="c-navigation__item">
-            <%= link_to("Sign Out", destroy_user_session_path, :method => 'delete', :class=>"c-navigation__link") %>
+            <%= link_to("Sign Out", destroy_user_session_path, :method => 'delete', class: "c-navigation__link #{active_class(destroy_user_session_path)}") %>
           </li>
           <li class="c-navigation__item">
-             <%= link_to("Sign Up", new_user_registration_path, class:"c-button c-button--small") %>
+             <%= link_to("Sign Up", new_user_registration_path, class:"c-button c-button--small #{active_class(new_user_registration_path)}") %>
           </li>
         </ul>
       </div>
