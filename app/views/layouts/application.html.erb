@@ -45,16 +45,18 @@
           <li class="c-navigation__item">
             <%= link_to("Add Book to Shop", new_book_path, class: "c-navigation__link #{active_class(new_book_path)}") %>
           </li>
-
-          <li class="c-navigation__item c-navigation__item--push-right">
-            <%= link_to("Sign In", new_user_session_path, class: "c-navigation__link #{active_class(new_user_session_path)}") %>
-          </li>
-          <li class="c-navigation__item">
+          <% if current_user %>
+            <li class="c-navigation__item c-navigation__item--push-right">
             <%= link_to("Sign Out", destroy_user_session_path, :method => 'delete', class: "c-navigation__link #{active_class(destroy_user_session_path)}") %>
-          </li>
-          <li class="c-navigation__item">
-             <%= link_to("Sign Up", new_user_registration_path, class:"c-button c-button--small #{active_class(new_user_registration_path)}") %>
-          </li>
+            </li>
+          <% else %>
+            <li class="c-navigation__item c-navigation__item--push-right">
+              <%= link_to("Sign In", new_user_session_path, class: "c-navigation__link #{active_class(new_user_session_path)}") %>
+            </li>
+            <li class="c-navigation__item">
+               <%= link_to("Sign Up", new_user_registration_path, class:"c-button c-button--small #{active_class(new_user_registration_path)}") %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </header>
