@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get     "styleguide",   to: "style_guide#styleguide"
 
   resources :books
+  resources :authors, only: [:index, :show]
  # resources :books, only: :show do
  # resources :books do
   resources :books, only: [:show] do
