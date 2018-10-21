@@ -2,7 +2,7 @@ class ProfileController < ApplicationController
   def show
     # current_user.name = "Katie"
     def cropped_avatar
-       @cropped_avatar = current_user.avatar.variant(resize: "150x200")
+      #@cropped_avatar = current_user.avatar.variant(resize: "150x200")
     end
   end
 

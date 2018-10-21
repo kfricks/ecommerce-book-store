@@ -2,7 +2,9 @@
 
 <div class="c-section">
   <div class="book_cover">
-    <%= image_tag @book.book_cover if @book.book_cover.attached? %>
+    <% if @book.book_cover.attached? %>
+      <%= image_tag @book.book_cover.variant(resize: "200x200") %>
+    <% end %>
   </div>
   <div class="book-details">
     <h4 class="c-title"><%= @book.title %></h4>
