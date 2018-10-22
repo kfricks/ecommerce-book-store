@@ -15,7 +15,11 @@ Rails.application.routes.draw do
  # resources :books do
   resources :books, only: [:show] do
     resources :purchases, only: [:new, :create, :show]
-    end
+  end
 
   get "/purchases", to: "purchases#index"
+
+  namespace :admin do
+    resources :books
+  end
 end

@@ -12,11 +12,14 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     # book.book_cover.attach(params[:book_cover])
     @book.author = current_user
+
     if @book.save!
       redirect_to root_path
     else
       render :new
     end
+
+    @book.author = current_user unless current_user.admin?
   end
 
   def new
@@ -47,6 +50,6 @@ class BooksController < ApplicationController
 private
 
   def book_params
-    params.require(:book).permit(:title, :book_cover, :price)
+    params.require(:book).permit(:title, :book_cover, :price, :author)
   end
 end

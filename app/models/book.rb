@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
 
   belongs_to :author, class_name: "User"
+  # prob need line about adding author
 
   has_one_attached :book_cover
 
