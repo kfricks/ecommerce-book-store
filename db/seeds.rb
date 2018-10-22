@@ -1,5 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# load data:      rails db:seed
+#
+# reset data:     rails db:reset
 #
 # Examples:
 #
@@ -7,19 +9,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # first line puts everything in transaction container so i don't have to recreate users each time
+require 'faker'
+
 ActiveRecord::Base.transaction do
-  User.create!(name: "Katie", email: "katief@katie.com", password:"tester")
+  User.create!(name: "admin3000", email: "admin@admin.com", password:"tester", admin:true, author: false)
 
-  kurt_v = User.create!(name: "Kurt Vonny", email: "kurtv@kurt.com", password:"tester")
+  User.create!(name: "tester", email: "tester3000@tester.com", password: "tester", admin: false, author: false)
 
-  books = [
-    { title: "Book1", price: 15.99, author: kurt_v, image: "/images/Enchantment-Book-Cover-Best-Seller1.jpg" },
-    { title: "Book2", price: 24.99, author: kurt_v, image: "/images/Enchantment-Book-Cover-Best-Seller1.jpg"}
-    ]
-  books.each do |book|
-      # Book.create!(title: book[:title], price: book[:price], author: book[:author], book_cover: book[:image])
-        Book.create!(title: book[:title], price: book[:price], book_cover: book[:image])
+  User.create!(name: "tester-author", email: "tester-author@tester.com", password: "tester", admin: false, author: true)
+
+  User.create!(name: "Super Admin", email: "superadmin@admin.com", password: "tester", admin:true, author: true)
+
+  50.times do
+        book = Book.new
+        book.title = Faker::Book.title
+        book.price = rand(5..20)
+        book.author = User.where(author:true).sample
+        book.book_cover.attach(io: File.open(Rails.root.join('public/Enchantment-Book-Cover-Best-Seller1.jpg')), filename:"Enchantment-Book-Cover-Best-Seller1.jpg")
+        book.save!
   end
 
-  kurt_v.books << Book.all
 end
