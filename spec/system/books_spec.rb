@@ -10,16 +10,14 @@ RSpec.describe "Books", type: :system do
     expect(page).to have_text(first_book.title)
     expect(page).to have_text(second_book.title)
   end
+
+#   it "has an index page of all books" do
+  #   first_book = create(:book)
+  #   second_book = create(:book)
+
+  #   visit "/"
+
+  #   expect(page).to have_text(first_book.title)
+  #   expect(page).to have_text(second_book.title)
+  # end
 end
-
-# RSpec.describe "authors", type: :system do
-#   it "author is displayed with book" do
-#     first_book = create(:book)
-#     second_book = create(:book)
-
-#     visit "/"
-
-#     expect(page).to have_text(first_book.title)
-#     expect(page).to have_text(second_book.title)
-#   end
-# end
