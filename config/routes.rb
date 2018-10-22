@@ -14,7 +14,7 @@ Rails.application.routes.draw do
  # resources :books, only: :show do
  # resources :books do
   resources :books, only: [:show] do
-    resources :purchases, only: [:new, :create]
+    resources :purchases, only: [:new, :create, :show]
     end
 
   get "/purchases", to: "purchases#index"
