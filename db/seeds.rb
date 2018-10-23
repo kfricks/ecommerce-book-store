@@ -21,12 +21,12 @@ ActiveRecord::Base.transaction do
   User.create!(name: "Super Admin", email: "superadmin@admin.com", password: "tester", admin:true, author: true)
 
   50.times do
-        book = Book.new
-        book.title = Faker::Book.title
-        book.price = rand(5..20)
-        book.author = User.where(author:true).sample
-        book.book_cover.attach(io: File.open(Rails.root.join('public/Enchantment-Book-Cover-Best-Seller1.jpg')), filename:"Enchantment-Book-Cover-Best-Seller1.jpg")
-        book.save!
+    book = Book.new
+    book.title = Faker::Book.title
+    book.price = rand(5..20)
+    book.author = User.where(author:true).sample
+    book.book_cover.attach(io: File.open(Rails.root.join('public/Enchantment-Book-Cover-Best-Seller1.jpg')), filename:"Enchantment-Book-Cover-Best-Seller1.jpg")
+    book.save!
   end
 
 end
