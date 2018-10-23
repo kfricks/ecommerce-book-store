@@ -1,6 +1,9 @@
 <div class="c-section">
   <h1 class="c-title c-title--large">Browse All Books</h1>
 </div>
+  <%= react_component("HelloWorld", {
+  users: User.all
+}) %>
 <div class="c-section">
   <% @books.each do |book| %>
     <div class="c-card u-margin-bottom-small">
@@ -20,5 +23,7 @@
           </div>
         </div>
     </div>
+    <%= link_to "Previous", root_path(page: @prev_page) unless @prev_page.nil? %>
+    <%= link_to "Next", root_path(page: @next_page) unless @next_page.nil? %>
   <% end %>
 </div>

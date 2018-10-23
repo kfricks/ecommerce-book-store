@@ -29,4 +29,8 @@ ActiveRecord::Base.transaction do
     book.save!
   end
 
+  User.each do
+
+  end
+
 end

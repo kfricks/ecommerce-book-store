@@ -4,6 +4,7 @@ class Admin::BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @users = User.all
   end
 
   private
