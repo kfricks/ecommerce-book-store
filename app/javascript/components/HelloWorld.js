@@ -15,12 +15,18 @@ class HelloWorld extends React.Component {
               accessor: "email"
             },
             {
-            //   Header: "Title",
-            //   accessor: "book.title"
-            // },
-            {
               Header: "Name",
               accessor: "name"
+            },
+            {
+              id: "admin",
+              Header: "Admin",
+              accessor: (user) => user.admin ? "✅" : "❌"
+            },
+            {
+              id: "author",
+              Header: "Author",
+              accessor: (user) => user.author ? "✅" : "❌"
             }
           ]}
         />
