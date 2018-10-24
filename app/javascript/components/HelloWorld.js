@@ -27,6 +27,10 @@ class HelloWorld extends React.Component {
               id: "author",
               Header: "Author",
               accessor: (user) => user.author ? "✅" : "❌"
+            },
+            {
+              Header: "Author",
+              accessor: <%= link_to "Edit Book", edit_book_path(@book) %>
             }
           ]}
         />
