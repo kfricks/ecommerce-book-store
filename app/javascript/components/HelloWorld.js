@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import ReactTable from "react-table";
 import 'react-table/react-table.css';
 
+// the first "EditButton" is our own naming
+import EditButton from './EditButton';
+
 class HelloWorld extends React.Component {
   render () {
     return (
@@ -27,12 +30,13 @@ class HelloWorld extends React.Component {
               id: "author",
               Header: "Author",
               accessor: (user) => user.author ? "✅" : "❌"
-            },
-            // {
-            //   Header: "Edit",
-            //   accessor: book => <a href={`/admin/books/${book.id}/edit`}>Edit</a>,
-            //   id: "id"
-            // }
+            }
+            ,
+            {
+              Header: "Edit",
+              accessor: book => <EditButton book={book} />,
+              id: "id"
+            }
           ]}
         />
       </div>
