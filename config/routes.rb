@@ -1,3 +1,5 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
   devise_for :users
   root 'books#index'
@@ -20,6 +22,9 @@ Rails.application.routes.draw do
   get "/purchases", to: "purchases#index"
 
   namespace :admin do
+
+    mount Sidekiq::Web =.> "/sidekiq"
+
     resources :books
   end
 end
