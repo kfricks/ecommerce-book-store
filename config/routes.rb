@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
-    mount Sidekiq::Web =.> "/sidekiq"
+    mount Sidekiq::Web => "/sidekiq"
 
     resources :books
   end
